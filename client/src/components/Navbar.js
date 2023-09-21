@@ -1,13 +1,17 @@
 import React from "react";
-import {useSelector , useDispatch} from 'react-redux'
+import { useSelector, useDispatch } from "react-redux";
+import Dropdown from 'react-bootstrap/Dropdown';
+import { logoutUser } from "../actions/userActions";
 export default function Navbar() {
-
-  const cartstate = useSelector(state=>state.cartReducer)
+  const cartstate = useSelector((state) => state.cartReducer);
+  const userstate = useSelector((state) => state.loginUserReducer);
+  const { currentUser } = userstate;
+  const dispatch = useDispatch();
 
   return (
     <div>
       <nav className="navbar navbar-expand-lg shadow-lg p-3 mb-5 bg-white rounded ">
-        <a className="navbar-brand" href="#">
+        <a className="navbar-brand" href="/">
           DomiNosh PIZZA
         </a>
         <button
@@ -23,13 +27,27 @@ export default function Navbar() {
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ">
-            <li className="nav-item ">
-              <a className="nav-link" href="#">
-                Login
-              </a>
-            </li>
+            {currentUser ? (
+              <Dropdown className="mt-1" style={{marginRight: '20px'}}>
+                <Dropdown.Toggle variant="primary" id="dropdown-basic">
+                  {currentUser.name}
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu>
+                  <Dropdown.Item href="#">Orders</Dropdown.Item>
+                  <Dropdown.Item href="#" onClick={()=>{dispatch(logoutUser())}}><li>Logout</li></Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            ) : (
+              <li className="nav-item ">
+                <a className="nav-link" href="/login">
+                  Login
+                </a>
+              </li>
+            )}
+
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <a className="nav-link" href="/cart">
                 Cart {cartstate.cartItems.length}
               </a>
             </li>
