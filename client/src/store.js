@@ -4,12 +4,14 @@ import thunk from "redux-thunk";
 import { getAllPizzasReducer } from "./reducers/pizzaReducers";
 import { cartReducer } from "./reducers/cartReducer";
 import { loginUserReducer, registerUserReducer } from "./reducers/userReducers";
+import { placerOrderReducer } from "./reducers/orderReducer";
 
 const rootReducer = combineReducers({
   getAllPizzasReducer: getAllPizzasReducer,
   cartReducer: cartReducer,
   registerUserReducer: registerUserReducer,
   loginUserReducer: loginUserReducer,
+  placeOrderReducer : placerOrderReducer
 });
 
 const cartItems = localStorage.getItem("cartItems")

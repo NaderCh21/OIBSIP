@@ -34,7 +34,7 @@ export default function Navbar() {
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu>
-                  <Dropdown.Item href="#">Orders</Dropdown.Item>
+                  <Dropdown.Item href="/orders">Orders</Dropdown.Item>
                   <Dropdown.Item href="#" onClick={()=>{dispatch(logoutUser())}}><li>Logout</li></Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
