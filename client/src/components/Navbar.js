@@ -1,18 +1,23 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import Dropdown from 'react-bootstrap/Dropdown';
+import Dropdown from "react-bootstrap/Dropdown";
 import { logoutUser } from "../actions/userActions";
+
+
 export default function Navbar() {
-  const cartstate = useSelector((state) => state.cartReducer);
-  const userstate = useSelector((state) => state.loginUserReducer);
-  const { currentUser } = userstate;
+  const cartState = useSelector((state) => state.cartReducer);
+  const userState = useSelector((state) => state.loginUserReducer);
+  const { currentUser } = userState;
   const dispatch = useDispatch();
+
+  // Check if the user is an admin
+  const isAdmin = currentUser && currentUser.isAdmin;
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg shadow-lg p-3 mb-5 bg-white rounded ">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <a className="navbar-brand" href="/">
-          DomiNosh PIZZA
+          <span className="pizza-icon">🍕</span> DomiNosh PIZZA
         </a>
         <button
           className="navbar-toggler"
@@ -26,20 +31,43 @@ export default function Navbar() {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav ">
+          <ul className="navbar-nav ml-auto">
             {currentUser ? (
-              <Dropdown className="mt-1" style={{marginRight: '20px'}}>
-                <Dropdown.Toggle variant="primary" id="dropdown-basic">
-                  {currentUser.name}
-                </Dropdown.Toggle>
+              <>
+                {isAdmin && (
+                  <li className="nav-item">
+                    <a className="nav-link admin-link" href="/admin">
+                      Admin Dashboard
+                    </a>
+                  </li>
+                )}
+                <li className="nav-item dropdown">
+                  <Dropdown>
+                    <Dropdown.Toggle variant="primary" id="dropdown-basic">
+                      {currentUser.name}
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu style={{backgroundColor: 'black'}}>
+                      <Dropdown.Item
 
-                <Dropdown.Menu>
-                  <Dropdown.Item href="/orders">Orders</Dropdown.Item>
-                  <Dropdown.Item href="#" onClick={()=>{dispatch(logoutUser())}}><li>Logout</li></Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
+                        className="dropdown-item"
+                        href="/orders"
+                      >
+                        Orders
+                      </Dropdown.Item>
+                      <Dropdown.Item
+                        className="dropdown-item"
+                        onClick={() => {
+                          dispatch(logoutUser());
+                        }}
+                      >
+                        Logout
+                      </Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </li>
+              </>
             ) : (
-              <li className="nav-item ">
+              <li className="nav-item">
                 <a className="nav-link" href="/login">
                   Login
                 </a>
@@ -48,7 +76,8 @@ export default function Navbar() {
 
             <li className="nav-item">
               <a className="nav-link" href="/cart">
-                Cart {cartstate.cartItems.length}
+                <span className="cart-icon">🛒</span> Cart{" "}
+                {cartState.cartItems.length}
               </a>
             </li>
           </ul>

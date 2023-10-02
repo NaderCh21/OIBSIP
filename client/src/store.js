@@ -3,15 +3,20 @@ import { configureStore } from "@reduxjs/toolkit";
 import thunk from "redux-thunk";
 import { getAllPizzasReducer } from "./reducers/pizzaReducers";
 import { cartReducer } from "./reducers/cartReducer";
-import { loginUserReducer, registerUserReducer } from "./reducers/userReducers";
-import { placerOrderReducer } from "./reducers/orderReducer";
+import { loginUserReducer, registerUserReducer, adminPageReducer } from "./reducers/userReducers"; // Import adminPageReducer
+import {
+  placerOrderReducer,
+  getUserOrdersReducer,
+} from "./reducers/orderReducer";
 
 const rootReducer = combineReducers({
   getAllPizzasReducer: getAllPizzasReducer,
   cartReducer: cartReducer,
   registerUserReducer: registerUserReducer,
   loginUserReducer: loginUserReducer,
-  placeOrderReducer : placerOrderReducer
+  adminPageReducer: adminPageReducer, // Include adminPageReducer
+  placeOrderReducer: placerOrderReducer,
+  getUserOrdersReducer: getUserOrdersReducer,
 });
 
 const cartItems = localStorage.getItem("cartItems")
@@ -31,7 +36,7 @@ const store = configureStore({
     loginUserReducer: {
       currentUser: currentUser,
     },
-  }, // You can provide your initial state here
+  },
 });
 
 export default store;

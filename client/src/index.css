@@ -19,11 +19,11 @@ code {
 }
 
 .nav-link {
-  color: black !important ; 
+  color: #FFA726 !important ; 
 }
 
 .navbar-brand{
-  color: rgb(0, 0, 0) !important;
+  color: #FFA726!important;
   font-size: 30px !important;
   font-weight: 700;
 }
@@ -73,4 +73,713 @@ select{
   margin-top: 10px !important;
   box-shadow: none !important;
 
+}
+
+/* Pizza.css */
+
+/* Pizza.css */
+
+/* Styling for the entire pizza card */
+.pizza-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  padding: 20px;
+  border: 2px solid #f2f2f2;
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  transition: transform 0.2s ease-in-out;
+
+  /* Hover effect */
+  &:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Styling for pizza image */
+.pizza-image img {
+  max-width: 100%;
+  height: auto;
+  cursor: pointer;
+  border-radius: 15px 15px 0 0;
+  transition: transform 0.2s ease-in-out;
+
+  /* Hover effect */
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+/* Styling for pizza title */
+.pizza-title {
+  font-size: 24px;
+  margin: 10px 0;
+  text-align: center;
+  color: #333;
+}
+
+/* Styling for pizza options */
+.pizza-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-top: 1px solid #f2f2f2;
+}
+
+/* Styling for pizza variant */
+.pizza-variant,
+.pizza-quantity {
+  flex: 1;
+
+  p {
+    font-size: 16px;
+    margin: 5px 0;
+    text-align: center;
+    color: #555;
+  }
+
+  select.custom-select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #FFA726;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #fff;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" stroke="%23ff5722" stroke-width="2"><path d="M2 3l4 4 4-4" /></svg>');
+    background-repeat: no-repeat;
+    background-position: calc(100% - 15px) center;
+    transition: border-color 0.3s;
+
+    /* Hover effect */
+    &:hover {
+      border-color: #FFA726;
+    }
+  }
+}
+
+/* Styling for pizza price */
+.pizza-price {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #FFA726;
+  text-align: center;
+}
+
+/* Styling for add to cart button */
+.add-to-cart-button {
+  background-color:#FFA726;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s ease-in-out;
+  width: 100%;
+
+  /* Hover effect */
+  &:hover {
+    background-color: #FFA726;
+  }
+}
+
+/* Styling for the modal close button */
+.close-button {
+  background-color: #FFA726;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s ease-in-out;
+  width: 100%;
+
+  /* Hover effect */
+  &:hover {
+    background-color: #FFA726;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* Home.css */
+.home-container {
+  background-color: #f9f9f9;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif; /* Use a beautiful font, e.g., Google Fonts 'Poppins' */
+}
+
+.pizza-title {
+  color: #ffce49;
+  font-weight: bold;
+  font-size: 48px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add a subtle text shadow */
+}
+
+.landing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #ffce49;
+  padding: 50px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.landing-text {
+  text-align: center;
+  color: #333;
+}
+
+.landing p {
+  font-size: 18px;
+}
+
+.landing-image img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.pizza-list {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.pizza-list h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Add custom icons and additional styling for a creative look */
+/* Navbar.css */
+
+/* Navbar container styles */
+.navbar {
+  background-color: #FFA726; /* Orange background color */
+  padding: 10px 20px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+.navbar-brand {
+  color: #fff; /* White text color */
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+}
+
+/* Pizza icon styles */
+.pizza-icon {
+  font-size: 36px;
+  margin-right: 10px;
+}
+
+/* Toggler button styles */
+.navbar-toggler-icon {
+  background-color: #fff; /* White background for the toggler icon */
+}
+
+/* Navbar links styles */
+.navbar-nav {
+  margin-left: auto;
+  align-items: center;
+}
+
+.nav-link {
+  color: #fff; /* White text color */
+  font-size: 18px;
+  margin-left: 20px;
+  text-transform: uppercase;
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.nav-link:hover {
+  color: #FFA726; /* Orange text color on hover */
+}
+
+/* Dropdown styles */
+.dropdown-toggle {
+  background-color: #FFA726 !important; /* Orange background for dropdown toggle */
+  border: none;
+  color: #fff !important; /* White text color */
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease; /* Smooth background color transition on hover */
+}
+
+.dropdown-toggle:hover {
+  background-color: #FFA726 !important; /* Darker orange on hover */
+  color: #fff !important;
+}
+
+/* Dropdown menu styles */
+.dropdown-menu {
+  background-color: #FFA726; /* Orange dropdown background color */
+  border: none;
+  border-radius: 5px;
+}
+
+.dropdown-item {
+  color: #fff !important; /* White text color */
+  font-weight: bold;
+  transition: background-color 0.3s ease; /* Smooth background color transition on hover */
+}
+
+.dropdown-item:hover {
+  background-color: #FF6F00 !important; /* Darker orange on hover */
+  color: #fff !important;
+}
+
+/* Cart icon styles */
+.cart-icon {
+  font-size: 24px;
+  margin-right: 5px;
+}
+
+/* Login.css */
+
+/* Register.css */
+
+/* Login container styles */
+.login-container, .register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #FFA726; /* Orange background color */
+}
+
+.login-box, .registration-box {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Login and registration form styles */
+.login-title, .registration-title {
+  text-align: center;
+  font-size: 35px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #000000; /* Darker orange text color */
+}
+
+.form-control {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.login-button, .register-button {
+  background-color: #000000; /* Darker orange background color */
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth background color transition on hover */
+}
+
+.login-button:hover {
+  background-color: #FFA726; /* Lighter orange on hover */
+}
+
+.error-message {
+  color: #FF6F00; /* Darker orange text color for error messages */
+  text-align: center;
+  font-size: 16px;
+}
+
+/* Register link styles */
+.register-link, .login-link {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bolder;
+  margin-top: 10px;
+  color: #000000; /* Darker orange text color */
+  text-decoration: none;
+  display: block;
+  transition: color 0.3s ease; /* Smooth text color transition on hover */
+}
+
+.register-link:hover, .login-link:hover {
+  color: #FFA726; /* Lighter orange on hover */
+}
+
+/* Ordersscreen.css */
+
+/* Background styling */
+.orders-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: linear-gradient(to bottom, #FFA726, #FF6F00);
+  min-height: 100vh;
+}
+
+.orders-header {
+  text-align: center;
+}
+
+.orders-title {
+  font-size: 35px;
+  font-weight: bold;
+  color: #fff; /* White text color */
+  margin-bottom: 20px;
+}
+
+.order-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 20px;
+  padding: 20px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.order-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.order-info-title,
+.order-items-title,
+.order-address-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #FF6F00; /* Darker orange text color */
+}
+
+.order-info-divider,
+.order-items-divider,
+.order-address-divider {
+  border: 1px solid #ccc;
+}
+
+.order-info p,
+.order-items p,
+.order-address p {
+  margin: 5px 0;
+}
+
+.order-items-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.order-items-table th,
+.order-items-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+.order-items-table th {
+  background-color: #FF6F00; /* Darker orange background color */
+  color: #fff; /* White text color */
+}
+
+.order-items-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2; /* Light gray background color */
+}
+
+.order-items-table tbody tr:hover {
+  background-color: #FFA726; /* Lighter orange on hover */
+  cursor: pointer;
+}
+/* Cartscreen.css */
+
+/* Container styling */
+.cart-container {
+  padding: 20px;
+  background-color: #f7f7f7; /* Light gray background color */
+}
+
+/* Cart item styling */
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cart-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.cart-item-details {
+  flex: 2;
+}
+
+.cart-item-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.cart-item-price {
+  font-size: 16px;
+}
+
+.cart-item-quantity {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.cart-quantity-label {
+  margin-right: 5px;
+}
+
+.cart-quantity-icon {
+  font-size: 20px;
+  color: #FF6F00; /* Darker orange color */
+  cursor: pointer;
+}
+
+.cart-quantity {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 5px;
+}
+
+.cart-item-image {
+  flex: 1;
+  text-align: center;
+}
+
+.cart-image {
+  max-width: 80px;
+  max-height: 80px;
+}
+
+.cart-item-delete {
+  flex: 0.5;
+  text-align: center;
+}
+
+.cart-delete-icon {
+  font-size: 20px;
+  color: #FF6F00; /* Darker orange color */
+  cursor: pointer;
+}
+
+/* Cart subtotal styling */
+.cart-subtotal {
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+
+/* AdminPage.css */
+
+.admin-page-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  color: #FF6F00; /* Change to your desired color */
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.refresh-button {
+  background-color: #FFA726; /* Change to your desired color */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.refresh-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.user-table {
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+}
+
+thead {
+  background-color: #FFA726; /* Change to your desired color */
+  color: #fff;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+  background-color: #ddd;
+}
+
+/* Navbar.css */
+/* Style for the Admin Dashboard link */
+.admin-link {
+  margin-right: 20px;
+}
+
+/* Adjust spacing between navbar items */
+.navbar-nav {
+  gap: 20px;
+}
+
+/* Style for the cart icon */
+.cart-icon {
+  font-size: 24px;
+}
+
+/* Register.css */
+
+/* Container styles */
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color:  #FFA726; /* White background color */
+}
+
+/* Registration form styles */
+.registration-form {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Registration title styles */
+.registration-title {
+  text-align: center;
+  font-size: 35px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #000; /* Black text color */
+}
+
+/* Input field styles */
+.form-control {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #fff;
+}
+
+/* Checkbox container styles */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10 px;
+
+}
+
+/* Checkbox label styles */
+.checkbox-label {
+  font-size: 16px;
+  margin-left: 10px;
+  color: #000; /* Black text color */
+}
+
+/* Secret key input styles (visible when isAdmin is checked) */
+.secret-key-input {
+  display: none; /* Initially hidden */
+  margin-top: 15px;
+}
+
+/* REGISTER button styles */
+.register-button {
+  background-color: #000; /* Black background color */
+  color: #fff; /* White text color */
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth background color transition on hover */
+  width: 100%;
+}
+
+.register-button:hover {
+  background-color:  #FFA726; /* Darker gray on hover */
+}
+
+/* Login link styles */
+.login-link {
+  text-align: center;
+  font-size: 16px;
+  margin-top: 10px;
+  color: #000; /* Black text color */
+  text-decoration: none;
+  display: block;
+  transition: color 0.3s ease; /* Smooth text color transition on hover */
+}
+
+.login-link:hover {
+  color: #FFA726; /* Darker gray on hover */
 }

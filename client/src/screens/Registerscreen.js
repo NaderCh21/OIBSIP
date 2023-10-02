@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { registerUser } from "../actions/userActions";
 import Loading from "../components/Loading";
-import Success from '../components/Success'
 import Error from "../components/Error";
 
 export default function Registerscreen() {
@@ -10,84 +9,109 @@ export default function Registerscreen() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [Cpassword, setCpassword] = useState("");
-  const registerState = useSelector(state=>state.registerUserReducer)
-  const {loading ,success , error} = registerState
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [secretKey, setSecretKey] = useState("");
+  const registerState = useSelector((state) => state.registerUserReducer);
+  const { loading, error } = registerState;
 
   const dispatch = useDispatch();
-  function register() {
-    if (password != Cpassword) {
-      alert("password not matched");
+
+  const register = () => {
+    if (password !== Cpassword) {
+      alert("Password does not match");
     } else {
       const user = {
         name,
         email,
         password,
+        isAdmin,
+        secretKey: isAdmin ? secretKey : null, // Send null if not admin
       };
-      console.log(user);
       dispatch(registerUser(user));
     }
-  }
+  };
 
   return (
-    <div>
-      <div className="row justify-content-center">
-        <div className="col-md-5 mt-5 shadow-lg p-3 mb-5 bg-white rounded">
+    <div className="register-container">
+      <div className="pizza-background">
+        <div className="overlay"></div>
+        <div className="registration-form">
           {loading && <Loading />}
-          {success && <Success success='User Registered Successfully' />}
-          {error && <Error  error='Email Already Registered'/>}
-          <h2 className="text-center mt-2" style={{ fontSize: "35px" }}>
-            Register
-          </h2>
+          {error && <Error error={error.message} />}
+          <h2 className="registration-title">Register</h2>
           <div>
             <input
-              style={{ marginBottom: "10px" }}
+              className="form-control"
               required
               type="text"
-              placeholder="name"
-              className="form-control"
+              placeholder="Name"
               value={name}
               onChange={(e) => {
                 setName(e.target.value);
               }}
             />
             <input
-              style={{ marginBottom: "10px" }}
-              required
-              type="text"
-              placeholder="email"
               className="form-control"
+              required
+              type="email"
+              placeholder="Email"
               value={email}
               onChange={(e) => {
                 setEmail(e.target.value);
               }}
             />
             <input
-              style={{ marginBottom: "10px" }}
-              required
-              type="text"
-              placeholder="password"
               className="form-control"
+              required
+              type="password"
+              placeholder="Password"
               value={password}
               onChange={(e) => {
                 setPassword(e.target.value);
               }}
             />
             <input
-              style={{ marginBottom: "10px" }}
-              required
-              type="text"
-              placeholder="confirm password"
               className="form-control"
+              required
+              type="password"
+              placeholder="Confirm Password"
               value={Cpassword}
               onChange={(e) => {
                 setCpassword(e.target.value);
               }}
             />
-            <button onClick={register} className="btn mt-3 mb-3">
+            <div className="checkbox-container">
+              <label htmlFor="isAdmin" className="checkbox-label">
+                Register as Admin
+              </label>
+              <input
+                type="checkbox"
+                id="isAdmin"
+                checked={isAdmin}
+                onChange={(e) => {
+                  setIsAdmin(e.target.checked);
+                }}
+              />
+            </div>
+            {isAdmin && (
+              <div>
+                <label htmlFor="secretKey">Secret Key:</label>
+                <input
+                  className="form-control"
+                  type="password"
+                  id="secretKey"
+                  value={secretKey}
+                  onChange={(e) => {
+                    setSecretKey(e.target.value);
+                  }}
+                />
+              </div>
+            )}
+            <button onClick={register} className="register-button">
               REGISTER
             </button>
             <br />
-            <a style={{ color: "black", textDecoration: "none" }} href="/login">
+            <a href="/login" className="login-link">
               Click Here To Login
             </a>
           </div>
